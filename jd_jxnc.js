@@ -443,7 +443,7 @@ function submitInviteId(userName) {
 function getAssistUser() {
     return new Promise(resolve => {
         try {
-            $.get({url: `https://api.ninesix.cc/api/jx-nc?active=${$.info.active}`, timeout: 10000}, async (err, resp, _data) => {
+            $.get({url: `https://apii.ninesix.cc/api/jx-nc?active=${$.info.active}`, timeout: 10000}, async (err, resp, _data) => {
                 try {
                     const {code, data = {}} = JSON.parse(_data);
                     if (data.value) {
