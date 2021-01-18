@@ -52,3 +52,4 @@ jobs:
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
           DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
+          FACTORAY_WANTPRODUCT_NAME: ${{ secrets.FACTORAY_WANTPRODUCT_NAME }}          
