@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 🌾京喜农场1
+name: 🌾京喜农场
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: jxnc1
+    types: jxnc
 jobs:
   build:
 
@@ -39,7 +39,7 @@ jobs:
         run: |
           node jd_jxnc.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE_JXNC1 }}
+          JD_COOKIE: ${{ secrets.JD_COOKIE_JX }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
