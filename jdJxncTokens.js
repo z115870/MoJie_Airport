@@ -8,6 +8,10 @@
 let JxncTokens = [
   '',//账号一的京喜农场token
   '',//账号二的京喜农场token
+  '',//账号三的京喜农场token
+  '',//账号四的京喜农场token
+  '',//账号五的京喜农场token
+
 ]
 // 判断github action里面是否有京喜农场 token 
 if (process.env.JXNCTOKENS) {

@@ -12,6 +12,7 @@ let SuperMarketShareCodes = [
   '1@2@3@4@5',//账号二的好友shareCode，不同好友中间用@符号隔开
   '1@2@3@4@5',
   '1@2@3@4@5',
+  '1@2@3@4@5',
 ]
 // 判断github action里面是否有京小超商圈互助码
 if (process.env.SUPERMARKET_SHARECODES) {

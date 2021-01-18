@@ -11,6 +11,7 @@ let PlantBeanShareCodes = [
   '1@2@3@4@5',//账号二的好友shareCode，不同好友中间用@符号隔开
   '1@2@3@4@5',
   '1@2@3@4@5',
+  '1@2@3@4@5',
 ]
 // 判断github action里面是否有种豆得豆互助码
 if (process.env.PLANT_BEAN_SHARECODES) {
