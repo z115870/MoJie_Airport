@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 🕹东东消除
+name: 🕹消消乐工
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '30 */2 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: 
+    types: gyec
 jobs:
   build:
 
@@ -35,9 +35,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【东东消除】'
+      - name: '运行 【工业消消乐】'
         run: |
-          node jd_xxl.js
+          node jd_gyec.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
