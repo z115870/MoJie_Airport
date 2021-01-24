@@ -51,12 +51,12 @@ const inviteCodes = [
   `x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x`,
   `x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x`,
   `x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x@x`,
-  ]
+]
 !(async () => {
   $.tuanList = []
   await requireConfig();
-  if (helpAuthor) await getAuthorShareCode('https://giitee.com/shylocks/updateTeam/raw/main/jd_zz.json');
-  if (helpAuthor) await getAuthorShareCode('https://giitee.com/lxk0301/updateTeam/raw/master/jd_zz.json');
+  if (helpAuthor) await getAuthorShareCode('https://gitee.com/shylocks/updateTeam/raw/main/jd_zz.json');
+  if (helpAuthor) await getAuthorShareCode('https://gitee.com/lxk0301/updateTeam/raw/master/jd_zz.json');
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
@@ -121,10 +121,14 @@ async function jdWish() {
     let task = $.taskList[i]
     if (task['taskId'] === 1 && task['status'] !== 2) {
       console.log(`去做任务：${task.taskName}`)
-      await doTask({"taskId": task['taskId']})
+      await doTask({"taskId": task['taskId'],"mpVersion":"3.4.0"})
     } else if (task['taskId'] !== 3 && task['status'] !== 2) {
       console.log(`去做任务：${task.taskName}`)
-      await doTask({"taskId": task['taskId']})
+      if(task['itemId'])
+        await doTask({"itemId":task['itemId'],"taskId":task['taskId'],"mpVersion":"3.4.0"})
+      else
+        await doTask({"taskId": task['taskId'],"mpVersion":"3.4.0"})
+      await $.wait(3000)
     }
   }
   await getTaskList();
@@ -333,7 +337,7 @@ function doTask(body, func = "doInteractTask") {
 async function helpFriends() {
   for (let code of $.newShareCodes) {
     if (!code) continue
-    await doTask({"itemId": code, "taskId": "3", "mpVersion": "3.1.0"}, "doHelpTask")
+    await doTask({"itemId": code, "taskId": "3", "mpVersion": "3.4.0"}, "doHelpTask")
   }
 }
 function readShareCode() {
