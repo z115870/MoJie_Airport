@@ -92,7 +92,7 @@ if ($.isNode()) {
   }
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
-      $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
+      $.UserName = decodeURIComponent(cookie.matches(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       console.log(`${$.UserName}去参加第一个cookie账号开的团`)
       cookie = cookiesArr[i];
       if ($.tuanIds.length > 0) {
