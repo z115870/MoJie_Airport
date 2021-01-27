@@ -928,7 +928,7 @@ async function tuanActivity() {
 function QueryActiveConfig() {
   return new Promise((resolve) => {
     const options = {
-      'url': `https://m.jingxi.com/dreamfactory/tuan/QueryActiveConfig?activeId=${escape(tuanActiveId)}&_time=${Date.now()}&_=${Date.now()}&sceneval=2&g_login_type=1`,
+      'url': `https://m.jingxixxx.com/dreamfactory/tuan/QueryActiveConfig?activeId=${escape(tuanActiveId)}&_time=${Date.now()}&_=${Date.now()}&sceneval=2&g_login_type=1`,
       "headers": {
         "Accept": "*/*",
         "Accept-Encoding": "gzip, deflate, br",
@@ -968,7 +968,7 @@ function QueryActiveConfig() {
 function QueryTuan(activeId, tuanId) {
   return new Promise((resolve) => {
     const options = {
-      'url': `https://m.jingxi.com/dreamfactory/tuan/QueryTuan?activeId=${escape(activeId)}&tuanId=${escape(tuanId)}&_time=${Date.now()}&_=${Date.now()}&sceneval=2&g_login_type=1`,
+      'url': `https://m.jingxixxx.com/dreamfactory/tuan/QueryTuan?activeId=${escape(activeId)}&tuanId=${escape(tuanId)}&_time=${Date.now()}&_=${Date.now()}&sceneval=2&g_login_type=1`,
       "headers": {
         "Accept": "*/*",
         "Accept-Encoding": "gzip, deflate, br",
@@ -1007,7 +1007,7 @@ function QueryTuan(activeId, tuanId) {
 function CreateTuan() {
   return new Promise((resolve) => {
     const options = {
-      'url': `https://m.jingxi.com/dreamfactory/tuan/CreateTuan?activeId=${escape(tuanActiveId)}&isOpenApp=1&_time=${Date.now()}&_=${Date.now()}&sceneval=2&g_login_type=1&_stk=_time,activeId,isOpenApp`,
+      'url': `https://m.jingxixxx.com/dreamfactory/tuan/CreateTuan?activeId=${escape(tuanActiveId)}&isOpenApp=1&_time=${Date.now()}&_=${Date.now()}&sceneval=2&g_login_type=1&_stk=_time,activeId,isOpenApp`,
       "headers": {
         "Accept": "*/*",
         "Accept-Encoding": "gzip, deflate, br",
@@ -1062,7 +1062,7 @@ async function joinLeaderTuan() {
 function JoinTuan(tuanId) {
   return new Promise((resolve) => {
     const options = {
-      'url': `https://m.jingxi.com/dreamfactory/tuan/JoinTuan?activeId=${escape(tuanActiveId)}&tuanId=${escape(tuanId)}&_time=${Date.now()}&_=${Date.now()}&sceneval=2&g_login_type=1`,
+      'url': `https://m.jingxixxx.com/dreamfactory/tuan/JoinTuan?activeId=${escape(tuanActiveId)}&tuanId=${escape(tuanId)}&_time=${Date.now()}&_=${Date.now()}&sceneval=2&g_login_type=1`,
       "headers": {
         "Accept": "*/*",
         "Accept-Encoding": "gzip, deflate, br",
@@ -1210,7 +1210,7 @@ function tuanAward(activeId, tuanId, isTuanLeader = true) {
     })
   })
 }
-function updateTuanIds(url = 'https://raw.githubusercontent.com/LXK9301/updateTeam/master/jd_updateFactoryTuanId.json') {
+function updateTuanIds(url = 'https://raw.githubusercontentxxx.com/LXK9301/updateTeam/master/jd_updateFactoryTuanId.json') {
   return new Promise(resolve => {
     $.get({url}, (err, resp, data) => {
       try {
@@ -1367,9 +1367,9 @@ function shareCodesFormat() {
 }
 function requireConfig() {
   return new Promise(async resolve => {
-    await updateTuanIdsCDN('https://gitee.com/lxk0301/updateTeam/raw/master/jd_updateFactoryTuanId.json');
+    await updateTuanIdsCDN('https://giteexxx.com/lxk0301/updateTeam/raw/master/jd_updateFactoryTuanId.json');
     if (!$.tuanIdS) await updateTuanIds();
-    if (!$.tuanIdS) await updateTuanIdsCDN('https://cdn.jsdelivr.net/gh/LXK9301/updateTeam@master/jd_updateFactoryTuanId.json');
+    if (!$.tuanIdS) await updateTuanIdsCDN('https://cdn.jsdelivrxxx.net/gh/LXK9301/updateTeam@master/jd_updateFactoryTuanId.json');
     if ($.tuanIdS && $.tuanIdS.tuanActiveId) {
       tuanActiveId = $.tuanIdS.tuanActiveId;
     }
