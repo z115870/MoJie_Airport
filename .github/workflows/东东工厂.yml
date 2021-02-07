@@ -39,7 +39,7 @@ jobs:
         run: |
           node jd_jdfactory.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE_GC }}
+          JD_COOKIE: ${{ secrets.JD_COOKIE_DDGC }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}

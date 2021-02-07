@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 🐶宠汪兑换
+name: 🐶京东-宠汪汪·兑换
 
 on:
   workflow_dispatch:
@@ -35,7 +35,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【宠汪兑换】'
+      - name: '运行 【宠汪汪·兑换】'
         run: |
           node jd_joy_reward.js
         env:
