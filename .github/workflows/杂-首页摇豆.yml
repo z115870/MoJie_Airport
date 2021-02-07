@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 🌲金融钱树
+name: ♾杂项-首页摇豆
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 0-23 * * *' 
+    - cron: '5 16 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: moneyTree
+    types: club_lottery
 jobs:
   build:
 
@@ -35,9 +35,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【金融钱树】'
+      - name: '运行 【首页摇豆】'
         run: |
-          node jd_moneyTree.js
+          node jd_club_lottery.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -51,4 +51,3 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-          MONEY_TREE_SELL_FRUIT: ${{ secrets.MONEY_TREE_SELL_FRUIT }}

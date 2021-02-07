@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 🏠东东小窝
+name: 🤯杂项-疯狗任务
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6,16 * * *' 
+    - cron: '5 16,10 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: small_home
+    types: crazy_joy
 jobs:
   build:
 
@@ -35,9 +35,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【东东小窝】'
+      - name: '运行 【疯狗任务】'
         run: |
-          node jd_small_home.js
+          node jd_crazy_joy.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -51,3 +51,6 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
+          JDJOY_SHARECODES: ${{ secrets.JDJOY_SHARECODES }}
+          JDJOY_HELPSELF: ${{ secrets.JDJOY_HELPSELF }}
+          JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }}

@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 📈京豆变动
+name: 🥚金融-天天提鹅
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 */3 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: bean_change
+    types: 
 jobs:
   build:
 
@@ -35,11 +35,11 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【京豆变动】'
+      - name: '运行 【天天提鹅】'
         run: |
-          node jd_bean_change.js
+          node jd_daily_egg.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_COOKIE: ${{ secrets.JD_COOKIE_JR }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
