@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 🏭东东工厂
+name: 🌱京东-种豆得豆
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 * * * *' 
+    - cron: '10 23,1,3,5,7,9,11,13 * * *' #此处为UTC-0时间
   watch:
     types: started
   repository_dispatch:
-    types: jdfactory
+    types: plantBean
 jobs:
   build:
 
@@ -35,11 +35,11 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【东东工厂】'
+      - name: '运行 【种豆得豆】'
         run: |
-          node jd_jdfactory.js
+          node jd_plantBean.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE_DDGC }}
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
@@ -51,5 +51,4 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-          DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
-          FACTORAY_WANTPRODUCT_NAME: ${{ secrets.FACTORAY_WANTPRODUCT_NAME }}          
+          PLANT_BEAN_SHARECODES: ${{ secrets.PLANT_BEAN_SHARECODES }}

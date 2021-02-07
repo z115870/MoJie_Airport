@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 🌾京喜农场
+name: 🏝京喜-财富岛
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1,4,10 * * *'
+    - cron: '0 * * * *'
   watch:
     types: started
   repository_dispatch:
-    types: jxnc
+    types: cfd
 jobs:
   build:
 
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         #with:
-          #repository: /scripts
+          #repository: /xxx
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -35,12 +35,11 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【京喜农场】'
+      - name: '运行 【京喜财富岛】'
         run: |
-          node jd_jxnc.js
+          node jx_cfd.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE_JXNC }}
-          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
+          JD_COOKIE: ${{ secrets.JD_COOKIE_JXCFD }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
@@ -52,4 +51,3 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-          FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}

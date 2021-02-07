@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 🏝财富岛
+name: 🏭京喜-梦工厂
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 */2 * * *' 
   watch:
     types: started
   repository_dispatch:
-    types: cfd
+    types: dreamFactory
 jobs:
   build:
 
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         #with:
-          #repository: /xxx
+          #repository: lxk0301/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -35,11 +35,11 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【财富岛签到】'
+      - name: '运行 【京喜梦工厂】'
         run: |
-          node jx_cfd.js
+          node jd_dreamFactory.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE_JXCFD }}
+          JD_COOKIE: ${{ secrets.JD_COOKIE_JXGC }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
@@ -51,3 +51,4 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
+          DREAM_FACTORY_SHARE_CODES: ${{ secrets.DREAM_FACTORY_SHARE_CODES }}

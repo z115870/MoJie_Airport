@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 🌾东东农场
+name: 🛒京东-东东超市
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 22,4,10 * * *'
+    - cron: '11 */4 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: fruit
+    types: superMarket
 jobs:
   build:
 
@@ -35,9 +35,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【东东农场】'
+      - name: '运行 【东东超市】'
         run: |
-          node jd_fruit.js
+          node jd_superMarket.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -51,6 +51,7 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-          FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
-          FRUIT_BEAN_CARD: ${{ secrets.FRUIT_BEAN_CARD }}
-          FRUIT_NOTIFY_CONTROL: ${{ secrets.FRUIT_NOTIFY_CONTROL }}
+          jdSuperMarketUpgrade: ${{ secrets.SUPERMARKET_UPGRADE }}
+          jdBusinessCircleJump: ${{ secrets.BUSINESS_CIRCLE_JUMP }}
+          SUPERMARKET_SHARECODES: ${{ secrets.SUPERMARKET_SHARECODES }}
+          jdSuperMarketLottery: ${{ secrets.SUPERMARKET_LOTTERY }}
