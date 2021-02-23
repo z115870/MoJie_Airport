@@ -167,7 +167,8 @@ async function doAllTask() {
     if (item.ssjjTaskInfo.type === 1) {
       //邀请好友助力自己
       $.createAssistUserID = item.ssjjTaskInfo.id;
-      console.log(`createAssistUserID:${item.ssjjTaskInfo.id}`)
+      console.log(`createAssistUserID:***`)
+      //console.log(`createAssistUserID:${item.ssjjTaskInfo.id}`)
       console.log(`\n\n助力您的好友:${item.doneNum}人`)
     }
     if (item.ssjjTaskInfo.type === 2) {
@@ -285,7 +286,8 @@ function queryFurnituresCenterList() {
                 if ($.canBuyList[0].needWoB <= $.woB) {
                   await furnituresCenterPurchase($.canBuyList[0].id, $.canBuyList[0].jdBeanNum);
                 } else {
-                  console.log(`\n兑换${$.canBuyList[0].jdBeanNum}京豆失败:当前wo币${$.woB}不够兑换所需的${$.canBuyList[0].needWoB}WO币`)
+                  console.log(`\n兑换${$.canBuyList[0].jdBeanNum}京豆失败:当前wo币***不够兑换所需的${$.canBuyList[0].needWoB}WO币`)
+                  //当前wo币${$.woB}
                   message += `【装饰领京豆】兑换${$.canBuyList[0].jdBeanNum}京豆失败,原因:WO币不够\n`;
                 }
                 // for (let canBuyItem of $.canBuyList) {
@@ -346,7 +348,8 @@ function queryByUserId() {
               if (data.body) {
                 message += `【小窝名】${data.body.name}\n`;
                 $.woB = data.body.woB;
-                message += `【当前WO币】${data.body.woB}\n`;
+                message += `【当前WO币】***\n`;
+                //`【当前WO币】${data.body.woB}\n`
               }
             }
           }
