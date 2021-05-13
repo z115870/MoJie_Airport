@@ -6,7 +6,7 @@ name: 🤝特殊-获取互助码
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 16 1 * *'
+    - cron: '5 16 1,15 * *'
   watch:
     types: started
   repository_dispatch:
